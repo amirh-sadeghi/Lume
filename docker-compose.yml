@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: lume-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: lume
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - lume_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  lume_postgres_data:

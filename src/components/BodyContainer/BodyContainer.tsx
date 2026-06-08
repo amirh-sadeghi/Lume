@@ -1,152 +1,169 @@
 import React from "react";
+import { getFeaturedProducts, type Product } from "../../data/products";
+import { categoryImages } from "../../data/imageAssets";
 import "./BodyContainer.css";
 
-interface Product {
-  id: number;
-  name: string;
-  category: string;
-  price: number;
-  emoji: string;
-  tag?: string;
+interface BodyContainerProps {
+  onAddToCart: (product: Product) => void;
 }
 
-const FEATURED_PRODUCTS: Product[] = [
-  { id: 1, name: "Glow Serum", category: "Skincare", price: 38, emoji: "✨", tag: "Bestseller" },
-  { id: 2, name: "Silk Hair Mask", category: "Haircare", price: 29, emoji: "🌿", tag: "New" },
-  { id: 3, name: "Rose Face Oil", category: "Skincare", price: 45, emoji: "🌸" },
-  { id: 4, name: "Curl Cream", category: "Haircare", price: 24, emoji: "💫", tag: "Vegan" },
-];
+const FEATURED_PRODUCTS = getFeaturedProducts();
 
-const BodyContainer: React.FC = () => {
+const BodyContainer: React.FC<BodyContainerProps> = ({ onAddToCart }) => {
   return (
     <div className="body-container">
-
-      {/* ===== HERO SECTION ===== */}
       <section className="hero">
-        <div className="hero__bg-blob hero__bg-blob--1" />
-        <div className="hero__bg-blob hero__bg-blob--2" />
         <div className="container hero__inner">
           <div className="hero__content">
-            <span className="hero__eyebrow">✦ Naturale. Giovane. Luminoso.</span>
+            <span className="hero__eyebrow">Beauty pulita per rituali veri</span>
             <h1 className="hero__title">
-              La tua pelle
-              <em> merita</em>
-              <br />
-              il meglio
+              Luce fresca, capelli morbidi, zero complicazioni.
             </h1>
             <p className="hero__description">
-              Prodotti skincare e haircare formulati per la Gen Z.
-              Ingredienti puliti, packaging sostenibile, risultati reali.
+              Formule viso e capelli con attivi gentili, texture leggere e pack
+              sostenibili. Per una routine bella da vedere e facile da amare.
             </p>
             <div className="hero__actions">
               <a href="/shop" className="btn-primary">
-                Scopri i Prodotti
+                Scopri la collezione
               </a>
               <a href="/about" className="btn-secondary">
-                La Nostra Storia
+                Conosci Lum&eacute;
               </a>
             </div>
-            <div className="hero__stats">
+            <div className="hero__stats" aria-label="Punti forti del brand">
               <div className="hero__stat">
                 <strong>10k+</strong>
-                <span>Clienti felici</span>
+                <span>routine felici</span>
               </div>
               <div className="hero__stat-divider" />
               <div className="hero__stat">
                 <strong>100%</strong>
-                <span>Cruelty-free</span>
+                <span>cruelty-free</span>
               </div>
               <div className="hero__stat-divider" />
               <div className="hero__stat">
-                <strong>Clean</strong>
-                <span>Ingredienti</span>
+                <strong>16</strong>
+                <span>prodotti base</span>
               </div>
             </div>
           </div>
 
-          <div className="hero__visual">
-            <div className="hero__visual-card hero__visual-card--main">
-              <span className="hero__visual-emoji">🌿</span>
-              <p>Glow Collection</p>
-              <span className="hero__visual-tag">New Drop</span>
-            </div>
-            <div className="hero__visual-card hero__visual-card--secondary">
-              <span className="hero__visual-emoji">✨</span>
-              <p>Vitamin C Serum</p>
-            </div>
-            <div className="hero__visual-pill">
-              <span>🌸</span> Skincare naturale
+          <div className="hero__visual" aria-label="Prodotti Lumé per viso e capelli">
+            <img
+              className="hero__image"
+              src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80"
+              alt="Flaconi e creme skincare su una superficie calda"
+            />
+            <div className="hero__floating-card">
+                <span>Nuovo lancio</span>
+              <strong>Crema Barriera</strong>
+              <small>Ceramidi + avena lenitiva</small>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== CATEGORIES ===== */}
-      <section className="categories">
+      <section className="categories" aria-labelledby="category-title">
         <div className="container">
-          <h2 className="section-title">Esplora per Categoria</h2>
+          <div className="section-heading">
+            <span className="section-kicker">Scegli il tuo mood</span>
+            <h2 id="category-title" className="section-title">Compra per categoria</h2>
+          </div>
           <div className="categories__grid">
             <a href="/skincare" className="category-card category-card--skin">
-              <span className="category-card__emoji">✨</span>
-              <h3>Skincare</h3>
-              <p>Sieri, creme, oli</p>
-              <span className="category-card__arrow">→</span>
+              <img className="category-card__image" src={categoryImages.viso} alt="Prodotti Lumé per il viso" />
+              <span className="category-card__label">Viso</span>
+              <h3>Luce, idratazione, barriera felice</h3>
+              <p>Sieri, oli, creme e detergenti per una pelle fresca e luminosa.</p>
+              <span className="category-card__arrow">Esplora</span>
             </a>
             <a href="/haircare" className="category-card category-card--hair">
-              <span className="category-card__emoji">💆‍♀️</span>
-              <h3>Haircare</h3>
-              <p>Maschere, sieri, oli</p>
-              <span className="category-card__arrow">→</span>
+              <img className="category-card__image" src={categoryImages.capelli} alt="Prodotti Lumé per capelli" />
+              <span className="category-card__label">Capelli</span>
+              <h3>Morbidezza dalle radici alle punte</h3>
+              <p>Maschere, creme ricci, gocce cute e spray lucidanti anti-crespo.</p>
+              <span className="category-card__arrow">Esplora</span>
             </a>
           </div>
         </div>
       </section>
 
-      {/* ===== FEATURED PRODUCTS ===== */}
-      <section className="products">
+      <section className="products" aria-labelledby="featured-title">
         <div className="container">
           <div className="products__header">
-            <h2 className="section-title">I Più Amati ❤️</h2>
-            <a href="/shop" className="products__view-all">Vedi tutti →</a>
+            <div>
+              <span className="section-kicker">Parti da qui</span>
+              <h2 id="featured-title" className="section-title">I più desiderati</h2>
+            </div>
+            <a href="/shop" className="products__view-all">Vedi tutti i prodotti</a>
           </div>
           <div className="products__grid">
             {FEATURED_PRODUCTS.map((product) => (
-              <div key={product.id} className="product-card">
-                {product.tag && (
-                  <span className="product-card__tag">{product.tag}</span>
-                )}
-                <div className="product-card__image">
-                  <span className="product-card__emoji">{product.emoji}</span>
+              <article key={product.id} className="product-card">
+                {product.tag && <span className="product-card__tag">{product.tag}</span>}
+                <div className={`product-card__image product-card__image--${product.accent}`}>
+                  <img src={product.imageUrl} alt={product.imageAlt} />
                 </div>
                 <div className="product-card__info">
                   <span className="product-card__category">{product.category}</span>
                   <h3 className="product-card__name">{product.name}</h3>
+                  <p className="product-card__description">{product.description}</p>
                   <div className="product-card__footer">
-                    <span className="product-card__price">€{product.price}</span>
-                    <button className="product-card__btn" aria-label={`Aggiungi ${product.name} al carrello`}>
+                    <span className="product-card__price">&euro;{product.price}</span>
+                    <button
+                      className="product-card__btn"
+                      type="button"
+                      aria-label={`Aggiungi ${product.name} al carrello`}
+                      onClick={() => onAddToCart(product)}
+                    >
                       +
                     </button>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ===== BANNER ===== */}
-      <section className="banner">
-        <div className="container banner__inner">
-          <div className="banner__text">
-            <h2>Inizia il tuo rituale 🌙</h2>
-            <p>Ricevi consigli personalizzati per la tua routine beauty.</p>
+      <section className="routine">
+        <div className="container routine__inner">
+          <div>
+            <span className="section-kicker">Rituale base in 3 passaggi</span>
+            <h2 className="section-title">Una routine che sta nelle mattine vere.</h2>
           </div>
-          <a href="/quiz" className="btn-primary">
-            Fai il Quiz
-          </a>
+          <div className="routine__steps">
+            <article>
+              <span>01</span>
+              <h3>Detergi</h3>
+              <p>Inizia con una detersione morbida che lascia la pelle comoda.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Tratta</h3>
+              <p>Scegli un attivo mirato per glow, barriera o cute più equilibrata.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Sigilla</h3>
+              <p>Chiudi con crema, olio o spray lucentezza per un finish curato.</p>
+            </article>
+          </div>
         </div>
       </section>
 
+      <section className="banner">
+        <div className="container banner__inner">
+          <div className="banner__text">
+            <h2>Crea la tua prima mensola Lum&eacute;.</h2>
+            <p>Filtra per viso, capelli e bisogno della tua routine.</p>
+          </div>
+          <a href="/shop" className="btn-primary">
+            Inizia ora
+          </a>
+        </div>
+      </section>
     </div>
   );
 };

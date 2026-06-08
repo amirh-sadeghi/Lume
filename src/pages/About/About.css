@@ -1,0 +1,113 @@
+.about-page {
+  background-color: var(--color-cream);
+}
+
+.about-hero {
+  padding: var(--space-3xl) 0;
+}
+
+.about-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.about-hero h1 {
+  color: var(--color-charcoal);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.05;
+  margin-bottom: var(--space-lg);
+}
+
+.about-hero p {
+  max-width: 560px;
+  color: #6b635e;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.about-hero img {
+  width: 100%;
+  min-height: 480px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.about-story {
+  padding: var(--space-3xl) 0;
+  background-color: var(--color-white);
+}
+
+.about-story__inner {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: var(--space-3xl);
+}
+
+.about-story__intro h2 {
+  color: var(--color-charcoal);
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 3rem);
+  line-height: 1.08;
+}
+
+.about-story__copy {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.about-story__copy p {
+  color: #6f6863;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.about-values {
+  padding: var(--space-3xl) 0;
+}
+
+.about-values__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-lg);
+}
+
+.about-values article {
+  min-height: 260px;
+  padding: var(--space-xl);
+  border: 1px solid rgba(90, 107, 78, 0.15);
+  border-radius: var(--radius-md);
+  background-color: var(--color-white);
+}
+
+.about-values span {
+  color: var(--color-rose);
+  font-weight: 800;
+}
+
+.about-values h2 {
+  color: var(--color-charcoal);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+
+.about-values p {
+  color: #6f6863;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .about-hero__inner,
+  .about-story__inner,
+  .about-values__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero img {
+    min-height: 340px;
+  }
+}

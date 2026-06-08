@@ -1,8 +1,13 @@
 import React from "react";
-import BodyContainer from "../components/BodyContainer/BodyContainer";
+import BodyContainer from "../../components/BodyContainer/BodyContainer";
+import type { Product } from "../../data/products";
 
-const Home: React.FC = () => {
-  return <BodyContainer />;
+interface HomeProps {
+  onAddToCart: (product: Product) => void;
+}
+
+const Home: React.FC<HomeProps> = ({ onAddToCart }) => {
+  return <BodyContainer onAddToCart={onAddToCart} />;
 };
 
 export default Home;
