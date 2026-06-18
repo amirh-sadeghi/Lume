@@ -30,7 +30,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="footer__inner container">
         <div className="footer__brand">
           <a href="/" className="footer__logo" onClick={handleNavigate("/")}>
-            <span aria-hidden="true">✦</span> lum&eacute;
+            <span aria-hidden="true">✦</span> PuffLab
           </a>
           <p>
             Essenziali puliti per viso e capelli, pensati per routine piccole ma molto belle.
@@ -69,12 +69,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <input id="newsletter-email" type="email" placeholder="you@example.com" />
             <button type="submit">Entra</button>
           </div>
-          {isJoined && <small>Grazie. Sei nella lista Lum&eacute;.</small>}
+          {isJoined && <small>Grazie. Sei nella lista PuffLab.</small>}
         </form>
       </div>
 
       <div className="footer__bottom container">
-        <p>&copy; {currentYear} Lum&eacute;. Tutti i diritti riservati.</p>
+        <p>&copy; {currentYear} PuffLab. Tutti i diritti riservati.</p>
         <span>Creato per mensole curate e routine più leggere.</span>
       </div>
     </footer>

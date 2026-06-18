@@ -12,7 +12,7 @@ const VALUES = [
   },
   {
     title: "Routine senza ansia",
-    text: "Lum&eacute; è per chi vuole prendersi cura di sé senza mille step e senza confusione.",
+    text: "PuffLab è per chi vuole prendersi cura di sé senza mille step e senza confusione.",
   },
 ];
 
@@ -25,7 +25,7 @@ const About: React.FC = () => {
             <span className="section-kicker">Chi siamo</span>
             <h1>Essenziali beauty per rituali semplici, belli e costanti.</h1>
             <p>
-              Lum&eacute; nasce come una piccola mensola beauty di prodotti viso e capelli:
+              PuffLab nasce come una piccola mensola beauty di prodotti viso e capelli:
               formule facili da capire, piacevoli da usare e pensate per tutti i giorni.
             </p>
           </div>

@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ cartCount, currentPath, onNavigate, onC
       <div className="navbar__inner container">
         <a href="/" className="navbar__logo" aria-label="Homepage Lumé" onClick={handleNavigate("/")}>
           <span className="navbar__logo-icon" aria-hidden="true">✦</span>
-          <span className="navbar__logo-text">lum&eacute;</span>
+          <span className="navbar__logo-text">PuffLab</span>
         </a>
 
         <nav className="navbar__links" aria-label="Navigazione principale">

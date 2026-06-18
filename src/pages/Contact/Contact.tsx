@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
             <h1>Vuoi costruire una routine più tua?</h1>
             <p>
               Scrivici per consigli prodotto, supporto ordine o collaborazioni.
-              Il team Lum&eacute; risponde durante gli orari dello studio.
+              Il team PuffLab risponde durante gli orari dello studio.
             </p>
           </div>
           <div className="contact-card">
@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
             </button>
             {isSent && (
               <p className="contact-form__success">
-                Grazie. Il tuo messaggio è pronto per il team Lum&eacute;.
+                Grazie. Il tuo messaggio è pronto per il team PuffLab.
               </p>
             )}
           </form>

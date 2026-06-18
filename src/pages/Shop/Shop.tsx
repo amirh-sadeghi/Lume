@@ -44,7 +44,7 @@ const Shop: React.FC<ShopProps> = ({ initialCategory, initialSearch = "", onAddT
         <div className="container shop-hero__inner">
           <div>
             <span className="section-kicker">La mensola completa</span>
-            <h1>{category === "Tutti" ? <>Tutto Lum&eacute;</> : `Essenziali ${category.toLowerCase()}`}</h1>
+            <h1>{category === "Tutti" ? <>Tutto PuffLab</> : `Essenziali ${category.toLowerCase()}`}</h1>
             <p>
               Scopri formule per categoria, esigenza o texture. Ogni prodotto è pensato
               per essere facile da usare, bello da tenere in vista e semplice da combinare.

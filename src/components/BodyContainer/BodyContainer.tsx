@@ -28,7 +28,7 @@ const BodyContainer: React.FC<BodyContainerProps> = ({ onAddToCart }) => {
                 Scopri la collezione
               </a>
               <a href="/about" className="btn-secondary">
-                Conosci Lum&eacute;
+                Conosci PuffLab
               </a>
             </div>
             <div className="hero__stats" aria-label="Punti forti del brand">
@@ -156,7 +156,7 @@ const BodyContainer: React.FC<BodyContainerProps> = ({ onAddToCart }) => {
       <section className="banner">
         <div className="container banner__inner">
           <div className="banner__text">
-            <h2>Crea la tua prima mensola Lum&eacute;.</h2>
+            <h2>Crea la tua prima mensola PuffLab.</h2>
             <p>Filtra per viso, capelli e bisogno della tua routine.</p>
           </div>
           <a href="/shop" className="btn-primary">
